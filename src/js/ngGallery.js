@@ -29,10 +29,13 @@
         var template_url = defaults.templateUrl;
         // Set the default template
         $templateCache.put(template_url,
-            '<div class="{{ baseClass }}">' +
-            '  <div ng-repeat="i in images">' +
-            '    <img ng-src="{{ i.thumb }}" class="{{ thumbClass }}" ng-click="openGallery($index)" alt="Image {{ $index + 1 }}" />' +
-            '  </div>' +
+            '<div class="img-container" ng-if="!coverImageUrl">' +
+            '    <h4>{{images[0].description}}</h4>'+
+            '    <img ng-src="{{ images[0].thumb }}" ng-click="openGallery(0)" style="width:100%;"/>' +
+            '</div>' +
+            '<div class="img-container" ng-if="coverImageUrl">' +
+            '    <h4 ng-show="coverTitle">{{coverTitle}}</h4>'+
+            '    <img ng-src="{{ coverImageUrl }}" ng-click="openGallery(0)" style="width:100%;"/>' +
             '</div>' +
             '<div class="ng-overlay" ng-show="opened">' +
             '</div>' +
@@ -58,6 +61,8 @@
             restrict: 'EA',
             scope: {
                 images: '=',
+                coverImageUrl:'=?',
+                coverTitle: '=?',
                 thumbsNum: '@',
                 hideOverflow: '='
             },

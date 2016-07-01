@@ -4,15 +4,25 @@
   display: inline-block;
 }
 
+ng-gallery > .img-container{
+    width: 100%;
+    position: relative;
+}
+ng-gallery > .img-container > h4{
+    position: absolute;
+    top: 0px;
+    left: 10px;
+}
+
 img.ng-thumb {
   height: 50px;
   float: left;
   display: block;
   cursor: pointer;
-  margin: 2px 2px 0 0; 
+  margin: 2px 2px 0 0;
 }
 
-.ng-overlay { 
+.ng-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -29,7 +39,7 @@ img.ng-thumb {
   -webkit-user-drag: none;
 }
 
-.ng-gallery-content { 
+.ng-gallery-content {
   position: fixed;
   top: 0;
   left: 0;
@@ -103,14 +113,26 @@ img.ng-thumb {
   user-select: none;
   -webkit-user-drag: none;
 }
-
-.ng-gallery-content > img.effect {
-  animation: fadeIn 0.5s;
+@keyframes fadeIn {
+    from { opacity: 0.3;
+        transform: translateY(-100%);
+    }
+      to { opacity: 1; }
+}
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+      to {
+          opacity: 0.3;
+          transform: translateY(100%);}
 }
 
-@keyframes fadeIn {
-    from { opacity: 0.3; }
-      to { opacity: 1; }
+.ng-gallery-content > img.effect {
+  animation: fadeIn 0.2s;
+}
+.ng-gallery-content > img.ng-hide-active {
+    animation: fadeOut 0.2s !important;
 }
 
 .ng-gallery-content > span.info-text {
@@ -153,7 +175,7 @@ img.ng-thumb {
   opacity: 0.6;
 }
 
-.ng-gallery-content > .ng-thumbnails-wrapper > .ng-thumbnails > div > img:hover, 
+.ng-gallery-content > .ng-thumbnails-wrapper > .ng-thumbnails > div > img:hover,
 .ng-gallery-content > .ng-thumbnails-wrapper > .ng-thumbnails > div > img.active {
   transition: opacity 0.25s ease;
   opacity: 1;
@@ -162,11 +184,11 @@ img.ng-thumb {
 /* Loading - from http://loading.io */
 uiload {
   display: inline-block;
-  position: relative; 
+  position: relative;
 }
 
 uiload > div {
-    position: relative; 
+    position: relative;
 }
 
 @-webkit-keyframes uil-ring-anim {
@@ -175,7 +197,7 @@ uiload > div {
     -moz-transform: rotate(0deg);
     -webkit-transform: rotate(0deg);
     -o-transform: rotate(0deg);
-    transform: rotate(0deg); 
+    transform: rotate(0deg);
   }
 
   100% {
@@ -183,8 +205,8 @@ uiload > div {
     -moz-transform: rotate(360deg);
     -webkit-transform: rotate(360deg);
     -o-transform: rotate(360deg);
-    transform: rotate(360deg); 
-  } 
+    transform: rotate(360deg);
+  }
 }
 
 @-moz-keyframes uil-ring-anim {
@@ -193,7 +215,7 @@ uiload > div {
     -moz-transform: rotate(0deg);
     -webkit-transform: rotate(0deg);
     -o-transform: rotate(0deg);
-    transform: rotate(0deg); 
+    transform: rotate(0deg);
   }
 
   100% {
@@ -201,8 +223,8 @@ uiload > div {
     -moz-transform: rotate(360deg);
     -webkit-transform: rotate(360deg);
     -o-transform: rotate(360deg);
-    transform: rotate(360deg); 
-    } 
+    transform: rotate(360deg);
+    }
 }
 
 @-ms-keyframes uil-ring-anim {
@@ -211,7 +233,7 @@ uiload > div {
     -moz-transform: rotate(0deg);
     -webkit-transform: rotate(0deg);
     -o-transform: rotate(0deg);
-    transform: rotate(0deg); 
+    transform: rotate(0deg);
   }
 
   100% {
@@ -219,8 +241,8 @@ uiload > div {
     -moz-transform: rotate(360deg);
     -webkit-transform: rotate(360deg);
     -o-transform: rotate(360deg);
-    transform: rotate(360deg); 
-  } 
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes uil-ring-anim {
@@ -229,7 +251,7 @@ uiload > div {
     -moz-transform: rotate(0deg);
     -webkit-transform: rotate(0deg);
     -o-transform: rotate(0deg);
-    transform: rotate(0deg); 
+    transform: rotate(0deg);
   }
 
   100% {
@@ -237,8 +259,8 @@ uiload > div {
     -moz-transform: rotate(360deg);
     -webkit-transform: rotate(360deg);
     -o-transform: rotate(360deg);
-    transform: rotate(360deg); 
-  } 
+    transform: rotate(360deg);
+  }
 }
 
 .uil-ring-css {
@@ -247,7 +269,7 @@ uiload > div {
   top: 0;
   margin: 180px auto 0 auto;
   width: 100px;
-  height: 100px; 
+  height: 100px;
 }
 
 .uil-ring-css > div {
@@ -263,5 +285,5 @@ uiload > div {
     -moz-animation: uil-ring-anim 1s linear infinite;
     -webkit-animation: uil-ring-anim 1s linear infinite;
     -o-animation: uil-ring-anim 1s linear infinite;
-    animation: uil-ring-anim 1s linear infinite; 
+    animation: uil-ring-anim 1s linear infinite;
 }
