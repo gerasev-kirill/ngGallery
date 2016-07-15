@@ -92,7 +92,7 @@ img.ng-thumb {
   position: fixed;
   right: 30px;
   top: 50%;
-  //transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 .ng-gallery-content > img {
@@ -125,6 +125,7 @@ img.ng-thumb {
       to {
           opacity: 0.3;
           transform: scale(0);
+    }
 }
 
 .ng-gallery-content > img.effect {
