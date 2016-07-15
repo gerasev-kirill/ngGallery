@@ -92,7 +92,7 @@ img.ng-thumb {
   position: fixed;
   right: 30px;
   top: 50%;
-  transform: translateY(-50%);
+  //transform: translateY(-50%);
 }
 
 .ng-gallery-content > img {
@@ -115,7 +115,6 @@ img.ng-thumb {
 }
 @keyframes fadeIn {
     from { opacity: 0.3;
-        transform: translateY(-100%);
     }
       to { opacity: 1; }
 }
@@ -125,7 +124,7 @@ img.ng-thumb {
     }
       to {
           opacity: 0.3;
-          transform: translateY(100%);}
+          transform: scale(0);
 }
 
 .ng-gallery-content > img.effect {
@@ -265,11 +264,10 @@ uiload > div {
 
 .uil-ring-css {
   background: none;
-  position: relative;
-  top: 0;
-  margin: 180px auto 0 auto;
-  width: 100px;
-  height: 100px;
+  position: fixed;
+  left: calc(50% - 40px);
+  top: 40%;
+  z-index: 2000;
 }
 
 .uil-ring-css > div {
@@ -277,8 +275,6 @@ uiload > div {
     display: block;
     width: 80px;
     height: 80px;
-    top: 20px;
-    left: 20px;
     border-radius: 40px;
     box-shadow: 0 6px 0 0 #fff;
     -ms-animation: uil-ring-anim 1s linear infinite;

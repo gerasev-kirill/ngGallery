@@ -7,7 +7,7 @@
   ],
   "description": "AngularJS Photo Gallery Directive",
   "main": [
-    "src/js/ngGallery.js", 
+    "src/js/ngGallery.js",
     "src/css/ngGallery.css"
   ],
   "keywords": [
